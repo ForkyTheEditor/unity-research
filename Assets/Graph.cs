@@ -7,9 +7,10 @@ public class Graph : MonoBehaviour
     public enum GraphFunctionName { Sin2D, SecondPolynomial, WavyCylinder }
 
     public Transform pointPrefab;
-    [Range(10, 200)]
 
+    [Range(10, 100)]
     public int resolution;
+     
     Transform[] points;
 
     public GraphFunctionName selectedFunction;
