@@ -14,6 +14,7 @@ public class Fractal : MonoBehaviour
 
     private void Start()
     {
+       
         gameObject.AddComponent<MeshFilter>().mesh = mesh;
         gameObject.AddComponent<MeshRenderer>().material = material;
 
@@ -28,10 +29,12 @@ public class Fractal : MonoBehaviour
     private IEnumerator CreateChildren()
     {
         yield return new WaitForSeconds(0.5f);
-
         new GameObject("Fractal Child").AddComponent<Fractal>().InitializeChild(this, Vector3.up);
         yield return new WaitForSeconds(0.5f);
         new GameObject("Fractal Child").AddComponent<Fractal>().InitializeChild(this, Vector3.forward);
+        yield return new WaitForSeconds(0.5f);
+        new GameObject("Fractal Child").AddComponent<Fractal>().InitializeChild(this, Vector3.right);
+        
 
     }
 
